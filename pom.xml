@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cru.jc</groupId>
+    <artifactId>cru_jc_base</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>cru_jc_base</name>
+    <description>a simple app designed by cru</description>
+
+    <!-- springboot父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.4</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- tomcat7插件web应用端口 -->
+        <!--    <maven.tomcat.port>1019</maven.tomcat.port>-->
+        <!-- tomcat7插件web应用上下文路径，默认/web工程artifactId -->
+        <!--    <maven.tomcat.path>/${project.artifactId}</maven.tomcat.path>-->
+        <!--    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+    </properties>
+    <!--========================== 依赖 =========================-->
+    <dependencies>
+
+        <!-- springboot框架 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--  lombok注解  -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+        </dependency>
+
+        <!--  thymeleaf  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-java8time</artifactId>
+        </dependency>
+
+<!--================ springboot ==================-->
+        <!--  数据库连接  -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--  数据库库连接池  -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.21</version>
+        </dependency>
+
+        <!--  servlet依賴  -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- junit4测试 -->
+        <!--    <dependency>-->
+        <!--      <groupId>junit</groupId>-->
+        <!--      <artifactId>junit</artifactId>-->
+        <!--      <version>4.11</version>-->
+        <!--      <scope>test</scope>-->
+        <!--    </dependency>-->
+
+        <!-- fastjson依赖 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.70</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <!--========================== 构建 =========================-->
+    <build>
+        <plugins>
+            <!-- tomcat7:run 插件 -->
+            <!--      <plugin>-->
+            <!--        <groupId>org.apache.tomcat.maven</groupId>-->
+            <!--        <artifactId>tomcat7-maven-plugin</artifactId>-->
+            <!--        <version>2.2</version>-->
+            <!--        <configuration>-->
+            <!--          <uriEncoding>UTF-8</uriEncoding>-->
+            <!--          <url>http://localhost:${maven.tomcat.port}/</url>-->
+            <!--          <server>tomcat7</server>-->
+            <!--        </configuration>-->
+            <!--      </plugin>-->
+            <!-- springboot插件  -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.4</version>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
